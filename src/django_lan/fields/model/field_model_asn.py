@@ -32,10 +32,6 @@ from django.utils.translation import gettext_lazy as _
 # Import | Local Modules
 from ...utils.validators.validator_asn import validate_asn
 
-# =============================================================================
-# Variables
-# =============================================================================
-
 
 # =============================================================================
 # Classes
@@ -82,4 +78,3 @@ class ASNModelField(BigIntegerField):
 __all__ = [
     "ASNModelField",
 ]
-
