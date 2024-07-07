@@ -31,7 +31,7 @@ from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
 # Import | Local Modules
-from ...enums.enum_ip_address_version import IPAddressVersion
+from ...enums.enum_ip_address_version import IPAddressVersionEnum
 
 
 # =============================================================================
@@ -77,8 +77,8 @@ def validate_ip_address_version(value: Union[str, int]) -> None:
     if isinstance(value, int):
         value = f"IPv{value}"
 
-    if not IPAddressVersion.has_value(value):
-        valid_versions = ", ".join([ver.value for ver in IPAddressVersion])
+    if not IPAddressVersionEnum.has_value(value):
+        valid_versions = ", ".join([ver.value for ver in IPAddressVersionEnum])
         raise ValidationError(
             _("Invalid IP address version. Expected one of: {}.").format(valid_versions),  # noqa E501
             code = "invalid_ip_version",
