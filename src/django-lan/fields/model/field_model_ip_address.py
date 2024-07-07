@@ -43,8 +43,8 @@ from ...utils.validators.validator_ip_address import validate_ip_address
 
 class IPAddressModelField(CharField):
     """
-    IPAddress Model Field Class
-    ===========================
+    IP Address Model Field Class
+    ============================
 
     A Django model field that stores and validates IP addresses.
 
