@@ -62,11 +62,6 @@ class IPAddressVersionModelField(CharField):
         "A field to specify IP address version."
     )
 
-    VERSION_CHOICES = [
-        ("IPv4", "IPv4"),
-        ("IPv6", "IPv6"),
-    ]
-
     # Class | Methods
     # =========================================================================
 
