@@ -32,10 +32,6 @@ from django.utils.translation import gettext_lazy as _
 # Import | Local Modules
 from ...utils.validators.validator_cidr import validate_cidr
 
-# =============================================================================
-# Variables
-# =============================================================================
-
 
 # =============================================================================
 # Classes
