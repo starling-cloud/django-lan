@@ -7,7 +7,6 @@ Django LAN is a Django plugin designed to facilitate local area network (LAN) ma
 - **Network Device Management**: Manage and store configurations for various network devices.
 - **Custom Field Types**: Includes custom Django model fields for IP addresses, MAC addresses, CIDR notations, and more.
 - **Network Validation Tools**: Extensive validators for network-related data such as IP addresses, MAC addresses, port numbers, and CIDR blocks.
-- **Kubernetes Integration**: Manage Kubernetes resources, monitor deployments, and orchestrate containers through your Django app.
 - **Dynamic Form Components**: Utilize dynamic form fields that integrate directly with your network management models.
 
 ## Quick Start
