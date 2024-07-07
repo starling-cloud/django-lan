@@ -73,7 +73,7 @@ class IPAddressModelField(CharField):
             *args: Variable length argument list.
             **kwargs: Arbitrary keyword arguments.
         """
-        kwargs['max_length'] = 39
+        kwargs["max_length"] = 39
         super().__init__(*args, **kwargs)
         self.validators.append(validate_ip_address)
 
