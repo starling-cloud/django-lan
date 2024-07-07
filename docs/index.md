@@ -9,4 +9,4 @@
 
 **Django LAN** is a multichannel identity framework.
 
-**jango LAN** is an open-source project by [Starling Associates](https://www.starling.associates "Starling Associates website").
+**Django LAN** is an open-source project by [Starling Associates](https://www.starling.associates "Starling Associates website").
