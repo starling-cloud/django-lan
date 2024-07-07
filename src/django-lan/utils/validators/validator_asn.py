@@ -41,7 +41,6 @@ from django.utils.translation import gettext_lazy as _
 # Functions
 # =============================================================================
 
-
 def validate_asn(value: Any) -> None:
     """
     ASN Validation Function
