@@ -1,5 +1,5 @@
 # Canonical
-Canonical: https://www.scape.style/security.txt
+Canonical: https://www.djangolan.com/security.txt
 
 # Contact
 Contact: mailto:info@starling.associates
