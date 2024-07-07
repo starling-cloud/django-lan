@@ -90,8 +90,10 @@ class IPAddressVersionEnum(Enum):
         Returns:
             List[Tuple[str, str]]: A list of tuples, where each tuple
                 contains the enum member's name and value.
+
         """
-        return [(tag.name, tag.value) for tag in cls]
+
+        return [(member.name, member.value) for member in cls]
 
     @classmethod
     def has_value(cls, value: str) -> bool:
@@ -107,8 +109,11 @@ class IPAddressVersionEnum(Enum):
 
         Returns:
             bool: True if the value is a member of the enum, False otherwise.
+
         """
-        return value in cls._value2member_map_
+
+        # return value in cls._value2member_map_
+        return value in (member.value for member in cls)
 
 
 # =============================================================================
