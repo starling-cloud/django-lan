@@ -47,6 +47,7 @@ def validate_port_number(value: int) -> None:
     """
     Port Number Validation Function
     ===============================
+
     Validates that a given value is a valid network port number.
 
     Ensures that the port number falls within the standard range for TCP
@@ -67,9 +68,13 @@ def validate_port_number(value: int) -> None:
         None
         >>> validate_port_number(70000)
         ValidationError: Port number must be between 1 and 65535
+
     """
+
     try:
-        port = int(value)  # Attempt to convert value to int
+        # Attempt to convert value to int
+        port = int(value)
+
     except ValueError:
         raise ValidationError(
             _("Port number must be an integer"),
