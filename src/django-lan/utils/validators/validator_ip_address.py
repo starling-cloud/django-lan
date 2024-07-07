@@ -43,8 +43,8 @@ from django.utils.translation import gettext_lazy as _
 
 def validate_ip_address(value: Any) -> None:
     """
-    IPAddress Validation Function
-    =============================
+    IP Address Validation Function
+    ==============================
 
     Validates that the input is a valid IPv4 or IPv6 address.
 
