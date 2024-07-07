@@ -13,7 +13,7 @@ A field to store network masks in CIDR (Classless Inter-Domain Routing)
 notation, useful for defining subnets.
 
 Links:
-https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing
+- https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing
 
 """
 
