@@ -1,1 +1,1 @@
-# django-lan
+# Django LAN
