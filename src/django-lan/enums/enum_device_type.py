@@ -6,12 +6,14 @@
 # =============================================================================
 
 """
-Provides IFC Change Action Enum Class
-=====================================
+Provides Device Type Enum Class
+=======================================
+
+Enum for different authentication methods used in network security settings.
 
 
-For more information, refer to:
-https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/HTML/ifcutilityresource/lexical/ifcchangeactionenum.htm
+Links:
+- 
 
 """  # noqa E501
 
@@ -21,28 +23,41 @@ https://standards.buildingsmart.org/IFC/RELEASE/IFC2x3/TC1/HTML/ifcutilityresour
 # =============================================================================
 
 # Import | Standard Library
-from enum import Enum, auto
 
 # Import | Libraries
 from django.utils.translation import gettext_lazy as _
 
 # Import | Local Modules
+from .enum_base import BaseEnum
 
 
 # =============================================================================
 # Classes
 # =============================================================================
 
-class DeviceType(Enum):
+class DeviceTypeEnum(BaseEnum):
+    """
+    Device Type Enum Class
+    ======================
 
-    COMPUTER = auto()
-    PRINTER = auto()
-    ROUTER = auto()
-    SWITCH = auto()
-    ACCESS_POINT = auto()
-    SERVER = auto()
-    OTHER = auto()
+    """
 
-    def __str__(self):
-        # Provides a more readable string representation
-        return self.name.capitalize()
+    # Class | Enum Members
+    # =========================================================================
+
+    COMPUTER = _("Computer")
+    PRINTER =  _("Printer")
+    ROUTER =  _("Router")
+    SWITCH =  _("Switch")
+    ACCESS_POINT = _("Access Point")
+    SERVER =  _("Server")
+    OTHER =  _("Other")
+
+
+# =============================================================================
+# Public Interface
+# =============================================================================
+
+__all__ = [
+    "DeviceTypeEnum",
+]

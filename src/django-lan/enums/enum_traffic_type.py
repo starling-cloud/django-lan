@@ -1,16 +1,61 @@
-Traffic Type
-Define different types of network traffic to handle specific Quality of Service (QoS) settings or monitoring rules.
+# -*- coding: utf-8 -*-
 
 
+# =============================================================================
+# Docstring
+# =============================================================================
 
-from enum import Enum
+"""
+Provides Traffic Type Enum Class
+===============================
 
-class TrafficType(Enum):
-    VOIP = 'VoIP'
-    STREAMING = 'Streaming'
-    DATA = 'Data'
-    CONTROL = 'Control'
-    UNKNOWN = 'Unknown'
+Define different types of network traffic to handle specific Quality of
+Service (QoS) settings or monitoring rules.
 
-    def __str__(self):
-        return self.value
+Links:
+- 
+
+"""  # noqa E501
+
+
+# =============================================================================
+# Import
+# =============================================================================
+
+# Import | Standard Library
+
+# Import | Libraries
+from django.utils.translation import gettext_lazy as _
+
+# Import | Local Modules
+from .enum_base import BaseEnum
+
+
+# =============================================================================
+# Classes
+# =============================================================================
+
+class TrafficTypeEnum(BaseEnum):
+    """
+    Traffic Type Enum Class
+    ======================
+
+    """
+
+    # Class | Enum Members
+    # =========================================================================
+
+    VOIP = _("VoIP")
+    STREAMING = _("Streaming")
+    DATA = _("Data")
+    CONTROL = _("Control")
+    UNKNOWN = _("Unknown")
+
+
+# =============================================================================
+# Public Interface
+# =============================================================================
+
+__all__ = [
+    "TrafficTypeEnum",
+]

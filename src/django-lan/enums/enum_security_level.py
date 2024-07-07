@@ -1,14 +1,61 @@
-Security Level
-Set predefined security levels that can be applied to network segments or devices to simplify security management.
+# -*- coding: utf-8 -*-
 
 
-from enum import Enum
+# =============================================================================
+# Docstring
+# =============================================================================
 
-class SecurityLevel(Enum):
-    LOW = 'Low'
-    MEDIUM = 'Medium'
-    HIGH = 'High'
-    CRITICAL = 'Critical'
+"""
+Provides Security Level Enum Class
+=======================================
 
-    def __str__(self):
-        return self.value
+Set predefined security levels that can be applied to network segments or
+devices to simplify security management.
+
+
+Links:
+- 
+
+"""  # noqa E501
+
+
+# =============================================================================
+# Import
+# =============================================================================
+
+# Import | Standard Library
+
+# Import | Libraries
+from django.utils.translation import gettext_lazy as _
+
+# Import | Local Modules
+from .enum_base import BaseEnum
+
+
+# =============================================================================
+# Classes
+# =============================================================================
+
+class SecurityLevelEnum(BaseEnum):
+    """
+    Security Level Enum Class
+    ==============================
+
+    """
+
+    # Class | Enum Members
+    # =========================================================================
+
+    LOW = _("Low")
+    MEDIUM = _("Medium")
+    HIGH = _("High")
+    CRITICAL = _("Critical")
+
+
+# =============================================================================
+# Public Interface
+# =============================================================================
+
+__all__ = [
+    "SecurityLevelEnum",
+]

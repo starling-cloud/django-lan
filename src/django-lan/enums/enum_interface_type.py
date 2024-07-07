@@ -1,14 +1,60 @@
-Interface Type
-Specify the types of network interfaces to allow detailed configuration and compatibility checks.
+# -*- coding: utf-8 -*-
 
 
-from enum import Enum
+# =============================================================================
+# Docstring
+# =============================================================================
 
-class InterfaceType(Enum):
-    ETHERNET = 'Ethernet'
-    WIFI = 'Wi-Fi'
-    FIBER_OPTIC = 'Fiber Optic'
-    USB = 'USB'
+"""
+Provides Interface Type Enum Class
+==================================
 
-    def __str__(self):
-        return self.value
+Specify the types of network interfaces to allow detailed configuration and
+compatibility checks.
+
+Links:
+- 
+
+"""  # noqa E501
+
+
+# =============================================================================
+# Import
+# =============================================================================
+
+# Import | Standard Library
+
+# Import | Libraries
+from django.utils.translation import gettext_lazy as _
+
+# Import | Local Modules
+from .enum_base import BaseEnum
+
+
+# =============================================================================
+# Classes
+# =============================================================================
+
+class InterfaceTypeEnum(BaseEnum):
+    """
+    Interface Type Enum Class
+    =========================
+
+    """
+
+    # Class | Enum Members
+    # =========================================================================
+
+    ETHERNET = _("Ethernet")
+    WIFI = _("Wi-Fi")
+    FIBER_OPTIC = _("Fiber Optic")
+    USB = _("USB")
+
+
+# =============================================================================
+# Public Interface
+# =============================================================================
+
+__all__ = [
+    "InterfaceTypeEnum",
+]

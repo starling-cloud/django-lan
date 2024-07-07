@@ -1,14 +1,60 @@
-Authentication Type
+# -*- coding: utf-8 -*-
+
+
+# =============================================================================
+# Docstring
+# =============================================================================
+
+"""
+Provides Authentication Type Enum Class
+=======================================
+
 Enum for different authentication methods used in network security settings.
 
 
-from enum import Enum
+Links:
+- 
 
-class AuthenticationType(Enum):
-    PASSWORD = 'Password'
-    PUBLIC_KEY = 'Public Key'
-    BIOMETRIC = 'Biometric'
-    TWO_FACTOR = 'Two Factor'
+"""  # noqa E501
 
-    def __str__(self):
-        return self.value
+
+# =============================================================================
+# Import
+# =============================================================================
+
+# Import | Standard Library
+
+# Import | Libraries
+from django.utils.translation import gettext_lazy as _
+
+# Import | Local Modules
+from .enum_base import BaseEnum
+
+
+# =============================================================================
+# Classes
+# =============================================================================
+
+class AuthenticationTypeEnum(BaseEnum):
+    """
+    Authentication Type Enum Class
+    ==============================
+
+    """
+
+    # Class | Enum Members
+    # =========================================================================
+
+    PASSWORD = _("Password")
+    PUBLIC_KEY = _("Public Key")
+    BIOMETRIC = _("Biometric")
+    TWO_FACTOR = _("Two Factor")
+
+
+# =============================================================================
+# Public Interface
+# =============================================================================
+
+__all__ = [
+    "AuthenticationTypeEnum",
+]

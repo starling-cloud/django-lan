@@ -1,13 +1,58 @@
-VLAN Status
+# -*- coding: utf-8 -*-
+
+
+# =============================================================================
+# Docstring
+# =============================================================================
+
+"""
+Provides VLAN Status Enum Class
+===============================
+
 Manage and monitor VLAN configurations with predefined statuses.
 
+Links:
+- 
 
-from enum import Enum
+"""  # noqa E501
 
-class VLANStatus(Enum):
-    ACTIVE = 'Active'
-    INACTIVE = 'Inactive'
-    CONFIGURING = 'Configuring'
 
-    def __str__(self):
-        return self.value
+# =============================================================================
+# Import
+# =============================================================================
+
+# Import | Standard Library
+
+# Import | Libraries
+from django.utils.translation import gettext_lazy as _
+
+# Import | Local Modules
+from .enum_base import BaseEnum
+
+
+# =============================================================================
+# Classes
+# =============================================================================
+
+class VLANStatusEnum(BaseEnum):
+    """
+    VLAN Status Enum Class
+    ======================
+
+    """
+
+    # Class | Enum Members
+    # =========================================================================
+
+    ACTIVE = _("Active")
+    INACTIVE = _("Inactive")
+    CONFIGURING = _("Configuring")
+
+
+# =============================================================================
+# Public Interface
+# =============================================================================
+
+__all__ = [
+    "VLANStatusEnum",
+]

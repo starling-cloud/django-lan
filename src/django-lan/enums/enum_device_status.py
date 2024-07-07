@@ -6,11 +6,15 @@
 # =============================================================================
 
 """
-Provides IFC Change Action Enum Class
-=====================================
+Provides Device Status Enum Class
+=================================
 
-Network Device Status
-Define the possible statuses for network devices, such as active, inactive, or under maintenance.
+Define the possible statuses for network devices, such as active, inactive,
+or under maintenance.
+
+Links:
+- 
+
 """  # noqa E501
 
 
@@ -19,24 +23,37 @@ Define the possible statuses for network devices, such as active, inactive, or u
 # =============================================================================
 
 # Import | Standard Library
-from enum import Enum, auto
 
 # Import | Libraries
 from django.utils.translation import gettext_lazy as _
 
 # Import | Local Modules
+from .enum_base import BaseEnum
 
 
 # =============================================================================
 # Classes
 # =============================================================================
 
-from enum import Enum
+class DeviceStatusEnum(BaseEnum):
+    """
+    Device Status Enum Class
+    ========================
 
-class NetworkDeviceStatus(Enum):
-    ACTIVE = 'active'
-    INACTIVE = 'inactive'
-    MAINTENANCE = 'maintenance'
+    """
 
-    def __str__(self):
-        return self.value
+    # Class | Enum Members
+    # =========================================================================
+
+    ACTIVE = _("Active")
+    INACTIVE = _("Inactive")
+    MAINTENANCE = _("Maintenance")
+
+
+# =============================================================================
+# Public Interface
+# =============================================================================
+
+__all__ = [
+    "DeviceStatusEnum",
+]
