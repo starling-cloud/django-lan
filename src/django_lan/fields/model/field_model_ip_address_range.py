@@ -29,7 +29,8 @@ from django.db.models import CharField
 from django.utils.translation import gettext_lazy as _
 
 # Import | Local Modules
-from ...utils.validators.validator_ip_address_range import validate_ip_address_range  # noqa E501
+from ...utils.validators.validator_ip_address_range import \
+    validate_ip_address_range  # noqa E501
 
 # =============================================================================
 # Variables
@@ -55,14 +56,14 @@ class IPAddressRangeModelField(CharField):
     # Class | Variables
     # =========================================================================
 
-    description = _(
-        "A field that stores and validates ranges of IP addresses."
+    description: str = _(
+        message="A field that stores and validates ranges of IP addresses."
     )
 
     # Class | Methods
     # =========================================================================
 
-    def __init__(self, *args: Any, **kwargs: Any) -> None:
+    def __init__(self, *args: Any, **kwargs: Any,) -> None:
         """
         Initializes the IPAddressRangeModelField with sufficient maximum length
         to store two IPv4 or IPv6 addresses and custom validation.
@@ -86,13 +87,13 @@ class IPAddressRangeModelField(CharField):
             Any: The cleaned and validated value.
         """
         # Validator will handle range check
-        return super().clean(value, model_instance)
+        return super().clean(value=value, model_instance=model_instance,)
 
 
 # =============================================================================
 # Public Interface
 # =============================================================================
 
-__all__ = [
+__all__: list[str] = [
     "IPAddressRangeModelField",
 ]
