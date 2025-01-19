@@ -30,7 +30,6 @@ from django.utils.translation import gettext_lazy as _
 # Import | Local Modules
 from ...enums.enum_port_status import PortStatusEnum
 
-
 # =============================================================================
 # Variables
 # =============================================================================
