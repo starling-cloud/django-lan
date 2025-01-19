@@ -13,7 +13,7 @@ Enum for different authentication methods used in network security settings.
 
 
 Links:
-- 
+-
 
 """  # noqa E501
 
@@ -30,7 +30,6 @@ from django.utils.translation import gettext_lazy as _
 # Import | Local Modules
 from .enum_base import BaseEnum
 
-
 # =============================================================================
 # Classes
 # =============================================================================
@@ -45,16 +44,16 @@ class AuthenticationTypeEnum(BaseEnum):
     # Class | Enum Members
     # =========================================================================
 
-    PASSWORD = _("Password")
-    PUBLIC_KEY = _("Public Key")
-    BIOMETRIC = _("Biometric")
-    TWO_FACTOR = _("Two Factor")
+    PASSWORD: str = _(message="Password")
+    PUBLIC_KEY: str = _(message="Public Key")
+    BIOMETRIC: str = _(message="Biometric")
+    TWO_FACTOR: str = _(message="Two Factor")
 
 
 # =============================================================================
 # Public Interface
 # =============================================================================
 
-__all__ = [
+__all__: list[str] = [
     "AuthenticationTypeEnum",
 ]
