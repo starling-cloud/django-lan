@@ -22,9 +22,9 @@ Links:
 # Import
 # =============================================================================
 
+import ipaddress
 # Import | Standard Library
 from typing import Any
-import ipaddress
 
 # Import | Libraries
 from django.core.exceptions import ValidationError
@@ -74,12 +74,12 @@ def validate_cidr(value: Any) -> None:
     try:
         # Allows network address to be non-strict
         ipaddress.ip_network(
-            value,
+            address=value,
             strict = False,
         )
     except ValueError:
         raise ValidationError(
-            _("Invalid CIDR notation"),
+            message=_(message="Invalid CIDR notation"),
             code = "invalid_cidr",
         )
 
@@ -88,6 +88,6 @@ def validate_cidr(value: Any) -> None:
 # Public Interface
 # =============================================================================
 
-__all__ = [
+__all__: list[str] = [
     "validate_cidr",
 ]
