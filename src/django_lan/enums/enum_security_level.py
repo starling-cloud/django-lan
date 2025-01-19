@@ -14,7 +14,7 @@ devices to simplify security management.
 
 
 Links:
-- 
+-
 
 """  # noqa E501
 
@@ -30,7 +30,6 @@ from django.utils.translation import gettext_lazy as _
 
 # Import | Local Modules
 from .enum_base import BaseEnum
-
 
 # =============================================================================
 # Classes
