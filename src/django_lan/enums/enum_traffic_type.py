@@ -13,7 +13,7 @@ Define different types of network traffic to handle specific Quality of
 Service (QoS) settings or monitoring rules.
 
 Links:
-- 
+-
 
 """  # noqa E501
 
@@ -30,10 +30,10 @@ from django.utils.translation import gettext_lazy as _
 # Import | Local Modules
 from .enum_base import BaseEnum
 
-
 # =============================================================================
 # Classes
 # =============================================================================
+
 
 class TrafficTypeEnum(BaseEnum):
     """
@@ -45,17 +45,17 @@ class TrafficTypeEnum(BaseEnum):
     # Class | Enum Members
     # =========================================================================
 
-    VOIP = _("VoIP")
-    STREAMING = _("Streaming")
-    DATA = _("Data")
-    CONTROL = _("Control")
-    UNKNOWN = _("Unknown")
+    VOIP: str = _(message="VoIP")
+    STREAMING: str = _(message="Streaming")
+    DATA: str = _(message="Data")
+    CONTROL: str = _(message="Control")
+    UNKNOWN: str = _(message="Unknown")
 
 
 # =============================================================================
 # Public Interface
 # =============================================================================
 
-__all__ = [
+__all__: list[str] = [
     "TrafficTypeEnum",
 ]
