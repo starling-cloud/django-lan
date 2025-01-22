@@ -29,21 +29,21 @@ from django.utils.translation import gettext_lazy as _
 
 # Import | Local Modules
 from ..fields.model import (
-    NetworkDeviceRoleField,
-    NetworkLinkStatusField,
+    CIDRField,
+    DataRateField,
+    FrequencyField,
+    InterfaceTypeField,
     IPAddressField,
     MACAddressField,
-    CIDRField,
-    InterfaceTypeField,
-    FrequencyField,
+    NetworkDeviceRoleField,
+    NetworkLinkStatusField,
     PacketSizeField,
-    DataRateField,
 )
-
 
 # =============================================================================
 # Classes
 # =============================================================================
+
 
 class NetworkDeviceModel(models.Model):
     """
@@ -55,20 +55,44 @@ class NetworkDeviceModel(models.Model):
     # Class | Model Fields
     # =========================================================================
 
-    name = models.CharField(max_length=100, verbose_name=_("Device Name"))
-    description = models.TextField(blank=True, verbose_name=_("Description"))
+    name = models.CharField(
+        max_length=100,
+        verbose_name=_(message="Device Name"),
+    )
+    description = models.TextField(
+        blank=True,
+        verbose_name=_(message="Description"),
+    )
 
-    role = NetworkDeviceRoleField(verbose_name=_("Device Role"))
-    status = NetworkLinkStatusField(verbose_name=_("Network Status"))
+    role = NetworkDeviceRoleField(
+        verbose_name=_(message="Device Role"),
+    )
+    status = NetworkLinkStatusField(
+        verbose_name=_(message="Network Status"),
+    )
 
-    ip_address = IPAddressField(verbose_name=_("IP Address"))
-    mac_address = MACAddressField(verbose_name=_("MAC Address"))
-    subnet = CIDRField(verbose_name=_("Subnet"))
+    ip_address = IPAddressField(
+        verbose_name=_(message="IP Address"),
+    )
+    mac_address = MACAddressField(
+        verbose_name=_(message="MAC Address"),
+    )
+    subnet = CIDRField(
+        verbose_name=_(message="Subnet"),
+    )
 
-    interface_type = InterfaceTypeField(verbose_name=_("Interface Type"))
-    frequency_check = FrequencyField(verbose_name=_("Frequency Check"))
-    packet_size = PacketSizeField(verbose_name=_("Packet Size"))
-    data_rate = DataRateField(verbose_name=_("Data Rate"))
+    interface_type = InterfaceTypeField(
+        verbose_name=_(message="Interface Type"),
+    )
+    frequency_check = FrequencyField(
+        verbose_name=_(message="Frequency Check"),
+    )
+    packet_size = PacketSizeField(
+        verbose_name=_(message="Packet Size"),
+    )
+    data_rate = DataRateField(
+        verbose_name=_(message="Data Rate"),
+    )
 
     # Class | Model Methods
     # =========================================================================
@@ -86,6 +110,6 @@ class NetworkDeviceModel(models.Model):
 # Module Variables
 # =============================================================================
 
-__all__ = [
+__all__: list[str] = [
     "NetworkDeviceModel",
 ]
