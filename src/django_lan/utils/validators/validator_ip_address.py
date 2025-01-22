@@ -21,9 +21,9 @@ Links:
 # Import
 # =============================================================================
 
+import ipaddress
 # Import | Standard Library
 from typing import Any
-import ipaddress
 
 # Import | Libraries
 from django.core.exceptions import ValidationError
