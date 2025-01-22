@@ -29,6 +29,7 @@ Django = "^5.1"
 # Development Dependencies
 # =============================================================================
 
+scapy = "^2.6.1"
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.4"     # Framework for testing
 pytest-cov = "^6.0.0" # Code coverage for tests
