@@ -36,7 +36,7 @@ from django.utils.translation import gettext_lazy as _
 # Functions
 # =============================================================================
 
-def validate_asn(value: Any) -> None:
+def validate_asn(value: Any,) -> None:
     """
     ASN Validation Function
     =======================
@@ -64,15 +64,15 @@ def validate_asn(value: Any) -> None:
     """
 
     try:
-        asn = int(value)
+        asn = int(x=value)
     except ValueError:
         raise ValidationError(
-            _("ASN must be a number.")
+            message=_(message="ASN must be a number.",)
         )
 
     if not (1 <= asn <= 4294967295):
         raise ValidationError(
-            _("ASN must be between 1 and 4294967295 (inclusive).")
+            message=_(message="ASN must be between 1 and 4294967295 (inclusive).",)
         )
 
 
