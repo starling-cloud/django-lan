@@ -31,6 +31,7 @@ from django.utils.translation import gettext_lazy as _
 # Classes
 # =============================================================================
 
+
 class DjangoLanConfig(AppConfig):
     """
     Django LAN Config Class
@@ -48,8 +49,8 @@ class DjangoLanConfig(AppConfig):
     label = "django-lan"
 
     # Human-readable name for the application
-    verbose_name = _("Django LAN")
+    verbose_name: str = _(message="Django LAN")
 
     # Specifies the type of primary key to use by default for models in
     # this application
-    default_auto_field = "django.db.models.BigAutoField"
+    default_auto_field: str = "django.db.models.BigAutoField"
