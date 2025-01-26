@@ -34,6 +34,7 @@ from .enum_base import BaseEnum
 # Classes
 # =============================================================================
 
+
 class AuthenticationTypeEnum(BaseEnum):
     """
     Authentication Type Enum Class
