@@ -64,7 +64,7 @@ def validate_domain_name(value: str) -> None:
         and hyphen '-'.
     - Labels must start and end with a letter or a digit.
     - The top-level domain (TLD) must be at least two characters long.
-    
+
     Args:
         value (str): The domain name to validate.
 
@@ -102,9 +102,9 @@ def validate_domain_name(value: str) -> None:
         r'$'
     )
 
-    if not re.match(pattern, value):
+    if not re.match(pattern=pattern, string=value):
         raise ValidationError(
-            _("Invalid hostname. Ensure the domain name is compliant with RFC 1034/1035."),  # noqa E501
+            message=_(message="Invalid hostname. Ensure the domain name is compliant with RFC 1034/1035."),  # noqa E501
             code = "invalid_hostname",
         )
 
