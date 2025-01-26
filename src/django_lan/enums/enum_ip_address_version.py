@@ -23,20 +23,22 @@ Links:
 # Import
 # =============================================================================
 
-# Import | Standard Library
-from typing import List, Tuple
 from enum import Enum
 
-# Import | Libraries
-# from django.utils.translation import gettext_lazy as _
+# Import | Standard Library
+from typing import List, Tuple
 
 # Import | Local Modules
 from .enum_base import BaseEnum
+
+# Import | Libraries
+# from django.utils.translation import gettext_lazy as _
 
 
 # =============================================================================
 # Classes
 # =============================================================================
+
 
 class IPAddressVersionEnum(BaseEnum):
     """
@@ -54,8 +56,8 @@ class IPAddressVersionEnum(BaseEnum):
     # Class | Enum Members
     # =========================================================================
 
-    IPv4 = "IPv4"
-    IPv6 = "IPv6"
+    IPv4: str = "IPv4"
+    IPv6: str = "IPv6"
 
     # Class | Methods
     # =========================================================================
@@ -65,6 +67,6 @@ class IPAddressVersionEnum(BaseEnum):
 # Public Interface
 # =============================================================================
 
-__all__ = [
+__all__: List[str] = [
     "IPAddressVersionEnum",
 ]
