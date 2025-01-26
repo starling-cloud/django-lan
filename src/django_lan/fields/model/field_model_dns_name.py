@@ -69,7 +69,10 @@ class DNSNameField(CharField):
         value,
         model_instance,
     ):  # -> Any:
-        value = super().clean(value=value, model_instance=model_instance)
+        value = super().clean(
+            value=value,
+            model_instance=model_instance,
+        )
         if not re.match(
             pattern=r"^(?!-)[A-Z\d-]{1,63}(?<!-)(\.(?!-)[A-Z\d-]{1,63}(?<!-))*$",
             string=value,
@@ -77,4 +80,4 @@ class DNSNameField(CharField):
         ):
             raise ValidationError(message="Invalid DNS name format")
         return value
-        return value
+        # return value
