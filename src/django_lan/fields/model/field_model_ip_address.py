@@ -9,8 +9,10 @@
 Provides IP Address Model Field Class
 =====================================
 
-A field to store IP addresses with automatic validation to check if the stored
-value is a valid IP address.
+This class extends Django's CharField to store and validate IP addresses,
+ensuring that each stored value is a valid IPv4 or IPv6 address. This field
+automatically applies a validation to check the validity of IP addresses,
+facilitating easier management and integrity of network-related data.
 
 Links:
 - https://en.wikipedia.org/wiki/IP_address
@@ -32,7 +34,6 @@ from django.utils.translation import gettext_lazy as _
 # Import | Local Modules
 from ...utils.validators.validator_ip_address import validate_ip_address
 
-
 # =============================================================================
 # Variables
 # =============================================================================
@@ -42,29 +43,39 @@ from ...utils.validators.validator_ip_address import validate_ip_address
 # Classes
 # =============================================================================
 
+
 class IPAddressModelField(CharField):
     """
     IP Address Model Field Class
     ============================
 
-    A Django model field that stores and validates IP addresses.
+    A Django model field specifically for storing IP addresses with built-in
+    validation.
+
+    This field supports both IPv4 and IPv6 addresses, with automatic validation
+    upon data entry. It is ideal for models that require a representation of
+    network addresses where the IP address format needs to be strictly
+    enforced.
 
     Attributes:
-        description (str): Description of what the field is used for.
+        description (str): Descriptive text to outline the field's use within
+            models.
 
     """
 
     # Class | Variables
     # =========================================================================
 
-    description = _(
-        "An IP address field with validation."
-    )
+    description: str = _(message="An IP address field with validation.")
 
     # Class | Methods
     # =========================================================================
 
-    def __init__(self, *args: Any, **kwargs: Any) -> None:
+    def __init__(
+        self,
+        *args: Any,
+        **kwargs: Any,
+    ) -> None:
         """
         Initializes the IPAddressModelField with a default maximum length
         for IPv6 addresses.
@@ -73,8 +84,13 @@ class IPAddressModelField(CharField):
             *args: Variable length argument list.
             **kwargs: Arbitrary keyword arguments.
         """
-        kwargs["max_length"] = 39
+        # Max length for IPv6 addresses including potential subnet notation
+        kwargs.setdefault(
+            "max_length",
+            39,
+        )
         super().__init__(*args, **kwargs)
+        # Ensure the field uses the IP address validator
         self.validators.append(validate_ip_address)
 
 
@@ -82,6 +98,6 @@ class IPAddressModelField(CharField):
 # Public Interface
 # =============================================================================
 
-__all__ = [
+__all__: list[str] = [
     "IPAddressModelField",
 ]
