@@ -67,6 +67,7 @@ class NetworkDeviceModel(models.Model):
     role = NetworkDeviceRoleField(
         verbose_name=_(message="Device Role"),
     )
+
     status = NetworkLinkStatusField(
         verbose_name=_(message="Network Status"),
     )
@@ -74,9 +75,11 @@ class NetworkDeviceModel(models.Model):
     ip_address = IPAddressField(
         verbose_name=_(message="IP Address"),
     )
+
     mac_address = MACAddressField(
         verbose_name=_(message="MAC Address"),
     )
+
     subnet = CIDRField(
         verbose_name=_(message="Subnet"),
     )
@@ -84,12 +87,15 @@ class NetworkDeviceModel(models.Model):
     interface_type = InterfaceTypeField(
         verbose_name=_(message="Interface Type"),
     )
+
     frequency_check = FrequencyField(
         verbose_name=_(message="Frequency Check"),
     )
+
     packet_size = PacketSizeField(
         verbose_name=_(message="Packet Size"),
     )
+
     data_rate = DataRateField(
         verbose_name=_(message="Data Rate"),
     )
