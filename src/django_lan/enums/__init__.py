@@ -25,12 +25,11 @@ from .enum_security_level import SecurityLevelEnum
 from .enum_traffic_type import TrafficTypeEnum
 from .enum_vlan_status import VLANStatusEnum
 
-
 # =============================================================================
 # Public Interface
 # =============================================================================
 
-__all__ = [
+__all__: list[str] = [
     "AuthenticationTypeEnum",
     "DeviceRoleEnum",
     "DeviceStatusEnum",
