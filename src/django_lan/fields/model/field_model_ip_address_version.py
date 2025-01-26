@@ -31,8 +31,9 @@ from django.utils.translation import gettext_lazy as _
 
 # Import | Local Modules
 from ...enums.enum_ip_address_version import IPAddressVersion
-from ...utils.validators.validator_ip_address_version import validate_ip_address_version  # noqa E501
-
+from ...utils.validators.validator_ip_address_version import (
+    validate_ip_address_version,
+)  # noqa E501
 
 # =============================================================================
 # Variables
@@ -42,6 +43,7 @@ from ...utils.validators.validator_ip_address_version import validate_ip_address
 # =============================================================================
 # Classes
 # =============================================================================
+
 
 class IPAddressVersionModelField(CharField):
     """
@@ -58,9 +60,7 @@ class IPAddressVersionModelField(CharField):
     # Class | Variables
     # =========================================================================
 
-    description = _(
-        "A field to specify IP address version."
-    )
+    description: str = _(message="A field to specify IP address version.")
 
     # Class | Methods
     # =========================================================================
@@ -75,7 +75,11 @@ class IPAddressVersionModelField(CharField):
         super().__init__(*args, **kwargs)
         self.validators.append(validate_ip_address_version)
 
-    def clean(self, value: Any, model_instance: Any) -> Any:
+    def clean(
+        self,
+        value: Any,
+        model_instance: Any,
+    ) -> Any:
         """
         Cleans and validates the input value using the superclass’s cleaning
         logic and additional validation for IP version.
@@ -88,13 +92,16 @@ class IPAddressVersionModelField(CharField):
         Returns:
             Any: The cleaned and validated value.
         """
-        return super().clean(value, model_instance)
+        return super().clean(
+            value=value,
+            model_instance=model_instance,
+        )
 
 
 # =============================================================================
 # Public Interface
 # =============================================================================
 
-__all__ = [
+__all__: list[str] = [
     "IPAddressVersionModelField",
 ]
