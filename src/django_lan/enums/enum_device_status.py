@@ -13,7 +13,7 @@ Define the possible statuses for network devices, such as active, inactive,
 or under maintenance.
 
 Links:
-- 
+-
 
 """  # noqa E501
 
@@ -30,10 +30,10 @@ from django.utils.translation import gettext_lazy as _
 # Import | Local Modules
 from .enum_base import BaseEnum
 
-
 # =============================================================================
 # Classes
 # =============================================================================
+
 
 class DeviceStatusEnum(BaseEnum):
     """
@@ -45,15 +45,15 @@ class DeviceStatusEnum(BaseEnum):
     # Class | Enum Members
     # =========================================================================
 
-    ACTIVE = _("Active")
-    INACTIVE = _("Inactive")
-    MAINTENANCE = _("Maintenance")
+    ACTIVE: str = _(message="Active")
+    INACTIVE: str = _(message="Inactive")
+    MAINTENANCE: str = _(message="Maintenance")
 
 
 # =============================================================================
 # Public Interface
 # =============================================================================
 
-__all__ = [
+__all__: list[str] = [
     "DeviceStatusEnum",
 ]
