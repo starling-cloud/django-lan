@@ -13,7 +13,7 @@ This enum defines roles for network devices, facilitating role-based
 configuration and actions.
 
 Links:
-- 
+-
 
 """  # noqa E501
 
@@ -30,10 +30,10 @@ from django.utils.translation import gettext_lazy as _
 # Import | Local Modules
 from .enum_base import BaseEnum
 
-
 # =============================================================================
 # Classes
 # =============================================================================
+
 
 class DeviceRoleEnum(BaseEnum):
     """
@@ -45,10 +45,10 @@ class DeviceRoleEnum(BaseEnum):
     # Class | Enum Members
     # =========================================================================
 
-    ROUTER = _("Router")
-    SWITCH = _("Switch")
-    ACCESS_POINT = _("Access Point")
-    BRIDGE = _("Bridge")
+    ROUTER: str = _(message="Router")
+    SWITCH: str = _(message="Switch")
+    ACCESS_POINT: str = _(message="Access Point")
+    BRIDGE: str = _(message="Bridge")
 
     # Class | Methods
     # =========================================================================
@@ -58,6 +58,6 @@ class DeviceRoleEnum(BaseEnum):
 # Public Interface
 # =============================================================================
 
-__all__ = [
+__all__: list[str] = [
     "DeviceRoleEnum",
 ]
