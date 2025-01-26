@@ -19,9 +19,10 @@ serializers.
 # Import
 # =============================================================================
 
+from enum import Enum
+
 # Import | Standard Library
 from typing import List, Tuple
-from enum import Enum
 
 # Import | Libraries
 
@@ -31,6 +32,7 @@ from enum import Enum
 # =============================================================================
 # Classes
 # =============================================================================
+
 
 class BaseEnum(Enum):
     """
@@ -59,7 +61,7 @@ class BaseEnum(Enum):
         try:
             return self.value
         except ValueError as e:
-            return str(e)  # Log the error or handle it appropriately
+            return str(object=e)  # Log the error or handle it appropriately
 
     @classmethod
     def choices(cls) -> List[Tuple[str, str]]:
@@ -80,7 +82,10 @@ class BaseEnum(Enum):
         return [(member.name, member.value) for member in cls]
 
     @classmethod
-    def has_value(cls, value: str) -> bool:
+    def has_value(
+        cls,
+        value: str,
+    ) -> bool:
         """
         Checks if the given value is a valid member of the enum.
 
@@ -104,6 +109,6 @@ class BaseEnum(Enum):
 # Public Interface
 # =============================================================================
 
-__all__ = [
+__all__: List[str] = [
     "BaseEnum",
 ]
