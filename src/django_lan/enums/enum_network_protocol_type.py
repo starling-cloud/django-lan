@@ -13,7 +13,7 @@ Enumerate supported network protocols to ensure consistent configuration
 across network devices.
 
 Links:
-- 
+-
 
 """  # noqa E501
 
@@ -30,10 +30,10 @@ Links:
 # Import | Local Modules
 from .enum_base import BaseEnum
 
-
 # =============================================================================
 # Classes
 # =============================================================================
+
 
 class NetworkProtocolEnum(BaseEnum):
     """
@@ -56,6 +56,6 @@ class NetworkProtocolEnum(BaseEnum):
 # Public Interface
 # =============================================================================
 
-__all__ = [
+__all__: list[str] = [
     "NetworkProtocolEnum",
 ]
