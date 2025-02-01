@@ -32,7 +32,6 @@ from django.utils.translation import gettext_lazy as _
 # Import | Local Modules
 from ...utils.validators.validator_port_number import validate_port_number
 
-
 # =============================================================================
 # Variables
 # =============================================================================
@@ -41,6 +40,7 @@ from ...utils.validators.validator_port_number import validate_port_number
 # =============================================================================
 # Classes
 # =============================================================================
+
 
 class PortNumberModelField(IntegerField):
     """
@@ -57,21 +57,29 @@ class PortNumberModelField(IntegerField):
     # Class | Variables
     # =========================================================================
 
-    description = _(
-        "A field that stores and validates network port numbers."
+    description: str = _(
+        message="A field that stores and validates network port numbers."
     )
 
     # Class | Methods
     # =========================================================================
 
-    def __init__(self, *args: Any, **kwargs: Any) -> None:
+    def __init__(
+        self,
+        *args: Any,
+        **kwargs: Any,
+    ) -> None:
         """
         Initializes the PortNumberModelField with custom validation.
         """
         super().__init__(*args, **kwargs)
         self.validators.append(validate_port_number)
 
-    def clean(self, value: Any, model_instance: Any) -> Any:
+    def clean(
+        self,
+        value: Any,
+        model_instance: Any,
+    ) -> Any:
         """
         Cleans and validates the input value using the superclass’s
         cleaning logic.
@@ -85,13 +93,13 @@ class PortNumberModelField(IntegerField):
             Any: The cleaned and validated value.
         """
         # Validator will handle port range check
-        return super().clean(value, model_instance)
+        return super().clean(value=value, model_instance=model_instance)
 
 
 # =============================================================================
 # Public Interface
 # =============================================================================
 
-__all__ = [
+__all__: list[str] = [
     "PortNumberModelField",
 ]
