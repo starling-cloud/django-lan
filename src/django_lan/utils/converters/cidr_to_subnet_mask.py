@@ -1,10 +1,12 @@
+"""
 Convert CIDR to Subnet Mask
 A function to convert CIDR notation to a subnet mask, useful for network configuration tasks.
-
+"""
 
 import ipaddress
 
-def cidr_to_subnet_mask(cidr):
+
+def cidr_to_subnet_mask(cidr) -> str:
     """
     Converts CIDR notation to a subnet mask.
 
@@ -14,5 +16,5 @@ def cidr_to_subnet_mask(cidr):
     Returns:
     str: The corresponding subnet mask.
     """
-    network = ipaddress.ip_network(cidr, strict=False)
-    return str(network.netmask)
+    network: ipaddress.IPv4Network | ipaddress.IPv6Network = ipaddress.ip_network(address=cidr, strict=False,)
+    return str(object=network.netmask)
